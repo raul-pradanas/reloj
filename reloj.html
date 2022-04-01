@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"
+style="background-color:#333">
+</canvas>
+
+<script>
+const mainCanvas = document.getElementById("myCanvas");
+const mainCircle = mainCanvas.getContext("2d");
+const hoursCircle = mainCanvas.getContext("2d");
+const minutesCircle = mainCanvas.getContext("2d");
+const secondsCircle = mainCanvas.getContext("2d");
+ 
+const canvasWidth = mainCanvas.width;
+const canvasHeight = mainCanvas.height;
+let canvasRadius = 200;
+const rotateAngle = 2 * Math.PI / 60;  
+ 
+mainCircle.beginPath();
+mainCircle.arc(canvasWidth/2, canvasHeight/2, canvasRadius, 0, 2 * Math.PI, false);
+mainCircle.fillStyle = "blue";
+mainCircle.fill();
+
+hoursCircle.beginPath();
+hoursCircle.arc(canvasWidth/2, canvasHeight/4, canvasRadius/2, 0, 2 * Math.PI, false);
+hoursCircle.fillStyle = "green";
+hoursCircle.fill();
+
+minutesCircle.beginPath();
+minutesCircle.arc(canvasWidth/2, canvasHeight/8, canvasRadius/4, 0, 2 * Math.PI, false);
+minutesCircle.fillStyle = "yellow";
+minutesCircle.fill();
+
+secondsCircle.beginPath();
+secondsCircle.arc(canvasWidth/2, canvasHeight/16, canvasRadius/8, 0, 2 * Math.PI, false);
+secondsCircle.fillStyle = "white";
+secondsCircle.fill();
+/* secondsCircle.translate(canvasWidth/2 * 2*Math.PI,canvasHeight/16* 2*Math.PI );  
+secondsCircle.rotate(rotateAngle);  
+secondsCircle.translate(-canvasWidth/2,-canvasHeight/16);  */  
+
+</script>
+
+</body>
+</html>
